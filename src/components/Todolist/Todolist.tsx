@@ -1,4 +1,5 @@
 import React, { ChangeEvent, useState } from 'react';
+import { Task } from '../Task/Task';
 
 import styles from './Todolist.module.scss';
 
@@ -13,7 +14,7 @@ export const Todolist: React.FC<indexProps> = () => {
 
 	return (
 		<div className={styles.todolist}>
-			<span className={styles.title}>todolist</span>
+			<span className={styles.title}>todos</span>
 			<div className={styles.tasks}>
 				<div className={styles.textField}>
 					<input
@@ -24,6 +25,7 @@ export const Todolist: React.FC<indexProps> = () => {
 						// className={styles.textField}
 					/>
 				</div>
+				<Task />
 			</div>
 		</div>
 	);

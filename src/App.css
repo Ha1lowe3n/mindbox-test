@@ -3,8 +3,9 @@
 	margin: 0 auto;
 }
 
-.todolists {
+.todolist__wrapper {
+	margin-top: 50px;
 	display: flex;
-	justify-content: space-between;
-	padding-top: 50px;
+	justify-content: center;
+	align-items: center;
 }

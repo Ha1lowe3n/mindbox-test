@@ -1,33 +1,34 @@
 .todolist {
 	border-radius: 4px;
 	background: #edeef0;
+	min-width: 360px;
 
 	box-shadow: 0 1px 0 0 #dce1e6, 0 0 0 1px #e7e8ec;
 	padding: 10px;
 
 	.title {
 		display: block;
-		font-size: 18px;
+		font-size: 25px;
 		font-weight: 500;
 		margin-bottom: 10px;
 		text-align: center;
 	}
 
 	.tasks {
-		display: flex;
-		flex-direction: column;
 		background: #fff;
 	}
 
 	.textField {
 		position: relative;
-		border-bottom: 1px solid #a4a4a5;
+		border-bottom: 1px solid #cbcbcf;
+
 		//box-shadow: 0 1px 0 0 #dce1e6, 0 0 0 1px #e7e8ec;
 
 		input {
-			padding: 5px 5px 5px 25px;
+			padding: 10px 5px 10px 25px;
 			border: none;
 			background-color: inherit;
+			font-size: 18px;
 
 			&::placeholder {
 				opacity: 0.5;
@@ -42,8 +43,8 @@
 			content: '';
 			display: block;
 			position: absolute;
-			top: 8px;
-			left: 8px;
+			top: 15px;
+			left: 10px;
 			height: 5px;
 			width: 5px;
 			border-left: 2px solid black;
