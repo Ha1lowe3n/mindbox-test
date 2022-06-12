@@ -1,0 +1,10 @@
+.container {
+	width: 950px;
+	margin: 0 auto;
+}
+
+.todolists {
+	display: flex;
+	justify-content: space-between;
+	padding-top: 50px;
+}

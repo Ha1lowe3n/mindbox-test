@@ -1,0 +1,55 @@
+.todolist {
+	border-radius: 4px;
+	background: #edeef0;
+
+	box-shadow: 0 1px 0 0 #dce1e6, 0 0 0 1px #e7e8ec;
+	padding: 10px;
+
+	.title {
+		display: block;
+		font-size: 18px;
+		font-weight: 500;
+		margin-bottom: 10px;
+		text-align: center;
+	}
+
+	.tasks {
+		display: flex;
+		flex-direction: column;
+		background: #fff;
+	}
+
+	.textField {
+		position: relative;
+		border-bottom: 1px solid #a4a4a5;
+		//box-shadow: 0 1px 0 0 #dce1e6, 0 0 0 1px #e7e8ec;
+
+		input {
+			padding: 5px 5px 5px 25px;
+			border: none;
+			background-color: inherit;
+
+			&::placeholder {
+				opacity: 0.5;
+			}
+
+			&:focus {
+				outline: none;
+			}
+		}
+
+		&::before {
+			content: '';
+			display: block;
+			position: absolute;
+			top: 8px;
+			left: 8px;
+			height: 5px;
+			width: 5px;
+			border-left: 2px solid black;
+			border-top: 2px solid black;
+			transform: rotate(225deg);
+			opacity: 0.3;
+		}
+	}
+}
