@@ -1,23 +1,24 @@
-import React, { ChangeEvent, useState } from 'react';
+import React from 'react';
 import clsx from 'clsx';
 
 import styles from './Task.module.scss';
 
-interface indexProps {}
+type TaskPropsType = {
+	taskId: string;
+	title: string;
+	isDone: boolean;
+	changeTaskIsDone: (taskId: string) => void;
+};
 
-export const Task: React.FC<indexProps> = () => {
-	const [done, setDone] = useState<boolean>(false);
-
-	console.log(done);
-
-	const changeDone = () => setDone(!done);
+export const Task: React.FC<TaskPropsType> = ({ title, taskId, isDone, changeTaskIsDone }) => {
+	const changeDone = () => changeTaskIsDone(taskId);
 
 	return (
 		<div className={styles.task}>
 			<div className={styles.checkBox} onClick={changeDone}>
-				{done && <div className={styles.checkIcon}></div>}
+				{isDone && <div className={styles.checkIcon}></div>}
 			</div>
-			<span className={clsx(styles.taskTitle, done && styles.checked)}>task</span>
+			<span className={clsx(styles.taskTitle, isDone && styles.checked)}>{title}</span>
 		</div>
 	);
 };
