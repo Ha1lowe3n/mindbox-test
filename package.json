@@ -22,12 +22,15 @@
 		"start": "react-scripts start",
 		"build": "react-scripts build",
 		"test": "react-scripts test",
+		"test:cypress": "start-server-and-test start http://localhost:3000 cypress",
+		"cypress": "cypress open",
 		"eject": "react-scripts eject"
 	},
 	"eslintConfig": {
 		"extends": [
 			"react-app",
-			"react-app/jest"
+			"react-app/jest",
+			"plugin:cypress/recommended"
 		]
 	},
 	"jest": {
@@ -48,7 +51,10 @@
 		]
 	},
 	"devDependencies": {
+		"cypress": "^10.1.0",
+		"eslint-plugin-cypress": "^2.12.1",
 		"prettier": "^2.6.2",
-		"sass": "^1.52.3"
+		"sass": "^1.52.3",
+		"start-server-and-test": "^1.14.0"
 	}
 }

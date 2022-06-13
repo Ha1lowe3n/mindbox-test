@@ -15,9 +15,14 @@ export const Task: React.FC<TaskPropsType> = ({ title, taskId, isDone, changeTas
 
 	return (
 		<div className={styles.task} data-testid="task">
-			<div className={styles.checkBox} onClick={changeDone} data-testid="select isDone">
-				{isDone && <div className={styles.checkIcon}></div>}
-			</div>
+			<input
+				type="checkbox"
+				checked={isDone}
+				className={styles.checkBox}
+				onChange={changeDone}
+				data-testid="select isDone"
+			/>
+			{isDone && <div className={styles.checkIcon}></div>}
 			<span className={clsx(styles.taskTitle, isDone && styles.checked)}>{title}</span>
 		</div>
 	);

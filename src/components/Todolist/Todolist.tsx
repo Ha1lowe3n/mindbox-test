@@ -22,8 +22,10 @@ export const Todolist: React.FC = () => {
 	};
 
 	const createTaskHandler = () => {
-		createTask!(newTaskTitle);
-		setNewTaskTitle('');
+		if (!!newTaskTitle.trim()) {
+			createTask!(newTaskTitle);
+			setNewTaskTitle('');
+		}
 	};
 
 	const createTaskHandlerKeyboard = (e: KeyboardEvent<HTMLInputElement>) => {
@@ -56,6 +58,11 @@ export const Todolist: React.FC = () => {
 					</button>
 				</div>
 
+				{/* здесь можно было бы сделать список li, но я не сделал это намеренно, т.к. делал
+				плюс-минус по дизайну картинки в тз, и там сложно выделить какие-либо css свойства
+				для списка, чтобы оборачивать таски в отдельный тег, да и семантика неважна, т.к. у
+				нас CPA, а не SSR или SSG. Ну и не было пункта делать приложение для людей с
+				ограниченными возможностями */}
 				{filterTasks.map((task) => (
 					<Task
 						key={task.id}
