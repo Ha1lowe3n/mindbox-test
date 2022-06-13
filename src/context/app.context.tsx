@@ -31,30 +31,18 @@ export const AppContextProvider: React.FC<AppContextProviderPropsType> = ({ chil
 	const [filter, setFilter] = useState<FilterType>('all');
 
 	const createTask = (title: string) => {
-		setTasksState([
-			...tasksState,
-			{
-				id: nanoid(),
-				title,
-				isDone: false,
-			},
-		]);
+		setTasksState([...tasksState, { id: nanoid(), title, isDone: false }]);
 	};
 
 	const changeTaskIsDone = (taskId: string) => {
 		setTasksState(
-			tasksState.map((task) => {
-				if (task.id === taskId) {
-					return { ...task, isDone: !task.isDone };
-				}
-				return task;
-			}),
+			tasksState.map((task) =>
+				task.id === taskId ? { ...task, isDone: !task.isDone } : task,
+			),
 		);
 	};
 
-	const changeFilter = (filter: FilterType) => {
-		setFilter(filter);
-	};
+	const changeFilter = (filter: FilterType) => setFilter(filter);
 
 	const clearCompletedTasks = () => {
 		setTasksState(tasksState.filter((task) => !task.isDone));

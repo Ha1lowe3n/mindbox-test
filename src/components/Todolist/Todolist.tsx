@@ -1,14 +1,12 @@
 import clsx from 'clsx';
-import React, { ChangeEvent, useContext, useState, KeyboardEvent, MouseEvent } from 'react';
+import React, { ChangeEvent, useContext, useState, KeyboardEvent } from 'react';
 
 import { AppContext } from '../../context/app.context';
 import { Task } from '../Task/Task';
 
 import styles from './Todolist.module.scss';
 
-interface indexProps {}
-
-export const Todolist: React.FC<indexProps> = () => {
+export const Todolist: React.FC = () => {
 	const {
 		tasks,
 		currentFilter,
